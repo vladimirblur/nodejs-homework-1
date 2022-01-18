@@ -10,7 +10,7 @@ homework-1 CLI-Application
 
 - Получаем контакт по id
 
-[node index.js --action get --id 5](https://ibb.co/zfH3Q3n)
+[node index.js --action get --id=5](https://ibb.co/zfH3Q3n)
 
 - Добавялем контакт
 

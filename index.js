@@ -31,13 +31,24 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       break;
 
     case "add":
+      if (!name || !email || !phone) {
+        console.log("Missing fields, please enter (name, email, phone)");
+        return;
+      }
+
       const newContact = await addContact(name, email, phone);
       console.log(newContact);
       break;
 
     case "remove":
       const deleteContact = await removeContact(id);
-      console.log(deleteContact);
+
+      if (!deleteContact) {
+        console.log(`Contact with id=${id} not found`);
+      } else {
+        console.log("Contact deleted!\n", deleteContact);
+      }
+
       break;
 
     default:
